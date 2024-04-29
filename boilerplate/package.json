@@ -5,9 +5,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "archiver": "^7.0.1"
+    "unzipper": "^0.11.4"
   },
   "pkg": {
-    "assets": ["app.zip"]
+    "assets": [
+      "app.zip"
+    ]
   }
 }
