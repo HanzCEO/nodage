@@ -3,6 +3,9 @@
   "version": "0.1.0-alpha.1",
   "description": "Package your node.js project into a single executable file",
   "main": "index.js",
+  "bin": {
+    "nodage": "./index.js"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
