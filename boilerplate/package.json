@@ -1,0 +1,10 @@
+{
+  "name": "nodageboilerplate",
+  "private": "true",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "archiver": "^7.0.1"
+  }
+}
