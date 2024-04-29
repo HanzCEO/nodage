@@ -4,12 +4,19 @@
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {
-    "unzipper": "^0.11.4"
+  "scripts": {
+    "postinstall": "patch-package && npm un patch-package"
   },
   "pkg": {
     "assets": [
-      "app.zip"
+      "app.zip",
+      "app.zip.sha256"
     ]
+  },
+  "dependencies": {
+    "decompress-zip": "^0.3.3"
+  },
+  "devDependencies": {
+    "patch-package": "^8.0.0"
   }
 }

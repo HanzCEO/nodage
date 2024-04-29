@@ -1,0 +1,13 @@
+diff --git a/node_modules/decompress-zip/lib/decompress-zip.js b/node_modules/decompress-zip/lib/decompress-zip.js
+index 466d823..2a8260e 100644
+--- a/node_modules/decompress-zip/lib/decompress-zip.js
++++ b/node_modules/decompress-zip/lib/decompress-zip.js
+@@ -91,7 +91,7 @@ DecompressZip.prototype.extract = function (options) {
+           files = files.map(function (file) {
+             var destination = path.join(options.path, file.path);
+             // The destination path must not be outside options.path
+-            if (destination.indexOf(options.path) !== 0) {
++            if (destination.indexOf(path.resolve(options.path)) !== 0) {
+               throw new Error('You cannot extract a file outside of the target path');
+             }
+             return file;
