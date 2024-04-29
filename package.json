@@ -1,0 +1,25 @@
+{
+  "name": "nodage",
+  "version": "0.1.0-alpha.1",
+  "description": "Package your node.js project into a single executable file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HanzCEO/nodage.git"
+  },
+  "keywords": [
+    "pkg",
+    "node",
+    "to",
+    "exe"
+  ],
+  "author": "Hanz <hanz@godot.id>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HanzCEO/nodage/issues"
+  },
+  "homepage": "https://github.com/HanzCEO/nodage#readme"
+}
