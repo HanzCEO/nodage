@@ -13,9 +13,6 @@ const archive = archiver('zip', {
         level: 9
     }
 });
-archive.pipe(fs.createWriteStream(__dirname + '/boilerplate/app.zip'));
-// archive.glob('**/*', { cwd: path.resolve(process.cwd(), argv[0]), dot: true });
-archive.directory(path.resolve(process.cwd(), argv[0]), false);
 
 archive.on('close', async () => {
     console.log("[$] Project files compressed");
@@ -49,4 +46,9 @@ archive.on('error', (err) => {
 });
 
 console.log("[*] Compressing project files...");
+
+archive.pipe(fs.createWriteStream(__dirname + '/boilerplate/app.zip'));
+archive.glob('**/*', { cwd: path.resolve(process.cwd(), argv[0]), dot: true });
+// archive.directory(path.resolve(process.cwd(), argv[0]), false);
+
 archive.finalize();

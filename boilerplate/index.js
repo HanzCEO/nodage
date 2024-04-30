@@ -13,11 +13,12 @@ function startApp() {
     try {
         const package = JSON.parse(fs.readFileSync(appDir + '/package.json'));
         const child = spawn(
-            process.argv[0], [appDir + '/' + package.main, process.argv.slice(2)],
+            process.argv[0], [package.main, process.argv.slice(2)],
             {
                 cwd: appDir, shell: true,
                 stdio: 'inherit', detached: false
-            });
+            }
+        );
     } catch (e) {
         console.error(e);
     } finally {
