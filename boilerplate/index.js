@@ -8,11 +8,12 @@ const appUUID = fs.readFileSync(__dirname + '/app.tgz.sha256', 'utf8').toString(
 const appDir = dir + '/' + appUUID;
 
 function startApp() {
+    console.log(process.argv)
     process.chdir(appDir);
     try {
         const package = JSON.parse(fs.readFileSync(appDir + '/package.json'));
         const child = spawn(
-            process.argv[0], [package.main, process.argv.slice(2)],
+            appDir + '/.nodage/node', [package.main, process.argv.slice(2)],
             {
                 cwd: appDir, shell: true,
                 stdio: 'inherit', detached: false
