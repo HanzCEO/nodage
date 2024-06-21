@@ -134,3 +134,4 @@ test/
 *.zip
 app/
 *.sha256
+*.tgz

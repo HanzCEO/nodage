@@ -28,6 +28,7 @@
   "homepage": "https://github.com/HanzCEO/nodage#readme",
   "dependencies": {
     "@yao-pkg/pkg": "^5.11.5",
-    "archiver": "^7.0.1"
+    "fast-glob": "^3.3.2",
+    "tar": "^7.4.0"
   }
 }

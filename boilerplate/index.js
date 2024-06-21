@@ -1,11 +1,10 @@
 const fs = require('fs');
-const DecompressZip = require('decompress-zip');
+const tar = require('tar');
 const { spawn } = require('child_process');
 
 const dir = process.cwd();
 
-const extractor = new DecompressZip(__dirname + '/app.zip');
-const appUUID = fs.readFileSync(__dirname + '/app.zip.sha256', 'utf8').toString();
+const appUUID = fs.readFileSync(__dirname + '/app.tgz.sha256', 'utf8').toString();
 const appDir = dir + '/' + appUUID;
 
 function startApp() {
@@ -28,19 +27,17 @@ function startApp() {
     }
 }
 
-extractor.on('extract', () => {
-    startApp();
-});
-
-extractor.on('error', (err) => {
-    console.error(err);
-})
-
 if (fs.existsSync(appDir + '/package.json')) {
     // Don't extract if the app is already extracted
     startApp();
 } else {
-    extractor.extract({
-        path: appDir + '/'
-    });
+    fs.mkdirSync(appDir, { recursive: true });
+    tar.extract({
+        f: __dirname + '/app.tgz',
+        cwd: appDir
+    })
+    .then(_ => {
+        startApp();
+    })
+    .catch(err => console.error(err));
 }

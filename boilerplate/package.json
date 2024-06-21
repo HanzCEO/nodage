@@ -9,14 +9,14 @@
   },
   "pkg": {
     "assets": [
-      "app.zip",
-      "app.zip.sha256"
+      "app.tgz",
+      "app.tgz.sha256"
     ]
-  },
-  "dependencies": {
-    "decompress-zip": "^0.3.3"
   },
   "devDependencies": {
     "patch-package": "^8.0.0"
+  },
+  "dependencies": {
+    "tar": "^7.4.0"
   }
 }
