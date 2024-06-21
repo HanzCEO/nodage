@@ -1,6 +1,6 @@
 {
   "name": "nodage",
-  "version": "0.1.0-alpha.3",
+  "version": "0.1.0-alpha.4",
   "description": "Package your node.js project into a single executable file",
   "main": "index.js",
   "bin": {
